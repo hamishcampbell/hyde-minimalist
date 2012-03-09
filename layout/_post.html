@@ -1,0 +1,32 @@
+{% extends "skeleton/_body.html" %}
+{% block content %}
+<section>
+<article>
+{% block content_header %}
+<hgroup>
+    <h1>{{ page.title }}</h1>
+    <p><time datetime='{{ page.created|date:"c" }}'>{{ page.created|date:"D d M Y" }}</time></p>
+</hgroup>
+{% endblock %}
+
+{% block content_body %}
+<div class="content">
+	{% filter typogrify %}
+
+	{% markdown %}
+
+	{% block article %}
+	{% endblock %}
+		
+	{% endmarkdown %}
+
+	{% endfilter %}
+</div>
+{% endblock %}
+</article>
+</section>
+{% endblock %}
+
+{% block context_nav %}
+{% include "skeleton/_context_nav.html" %}
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends "skeleton/_root.html" %}
+{% block all %}
+<!DOCTYPE html>  
+<html lang="en">  
+  <head>  
+    <meta charset="utf-8">
+    <title>{% block title %}{{ page.title }} | {{ site.author }} | {{ site.name }}{% endblock %}</title>
+    {% block feeds %}
+    <link href="{{site.url}}/blog/atom.xml" rel="alternate" title="{{site.name}}" type="application/atom+xml"/>
+    {% endblock %}
+    {% block css %}
+    <link rel="stylesheet" href="{{site.url}}/media/css/base.css" type="text/css" media="screen" charset="utf-8">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Ubuntu+Mono|Armata" type="text/css">
+    {% block extra_css %}
+    {% endblock extra_css %}
+    {% endblock css %}
+    {% block js %}
+    {% block extra_js %}
+    {% endblock extra_js %}
+    {% endblock js %}
+  </head>
+  <body>
+    <div id="container">
+    {% include "skeleton/_header.html" %}
+    {% include "skeleton/_context_nav" %}
+    {% include "skeleton/_aside_name.html" %}
+    {% include "skeleton/_site_nav.html" %}
+    {% include "skeleton/_aside_find.html" %}
+    {% include "skeleton/_aside_feeds.html" %}
+    {% block content %}{% endblock %}
+    {% include "skeleton/_footer.html" %}
+    </div>
+  </body>
+</html>
+{% endblock %}
