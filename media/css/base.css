@@ -44,11 +44,6 @@ div#container {
 
 a {
   text-decoration: none;
-  border-bottom: 1px dotted white;
-
-  transition: all 300ms;
-  -webkit-transition: all 300ms;
-  -moz-transition: all 300ms;
 }
 
 a:hover {
@@ -89,7 +84,6 @@ aside {
 }
 
 nav {
-  text-transform: uppercase;
 }
 
 aside ul, nav ul {
@@ -97,6 +91,14 @@ aside ul, nav ul {
 }
 aside li, nav li {
   list-style: none;
+}
+nav li.selected {
+  font-weight: bold;
+}
+nav li.selected a:before {
+  font-family: "FontAwesome";
+  content: "\f061";
+  margin-right: 0.5em;
 }
 
 section {
@@ -108,11 +110,12 @@ article {
 }
 
 footer {
+  font-size: 0.9em;
   margin-left: 30%;
   border-top: 1px dotted;
 }
 
-article hgroup p {
+article hgroup p, article .meta {
   font-size: 0.9em;
   text-transform: uppercase;
 }
